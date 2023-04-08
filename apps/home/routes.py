@@ -1,23 +1,22 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 from apps.home import blueprint
-from flask import render_template, request
+from flask import render_template, redirect, request, url_for
 from flask_login import login_required
 from jinja2 import TemplateNotFound
 
+#@login_required 각 함수마다 존재하였으나, 로그인 기능 업앨 예정
+
+@blueprint.route('/')
+def route_default():
+    return redirect(url_for('home_blueprint.index'))
 
 @blueprint.route('/index')
-@login_required
 def index():
-
     return render_template('home/index.html', segment='index')
 
 
 @blueprint.route('/<template>')
-@login_required
 def route_template(template):
 
     try:
@@ -52,3 +51,5 @@ def get_segment(request):
 
     except:
         return None
+
+

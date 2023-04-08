@@ -1,7 +1,4 @@
 # -*- encoding: utf-8 -*-
-"""
-Copyright (c) 2019 - present AppSeed.us
-"""
 
 from flask import render_template, redirect, request, url_for
 from flask_login import (
@@ -18,13 +15,11 @@ from apps.authentication.models import Users
 from apps.authentication.util import verify_pass
 
 
-@blueprint.route('/')
-def route_default():
-    return redirect(url_for('authentication_blueprint.login'))
-
+# @blueprint.route('/')
+# def route_default():
+#     return redirect(url_for('authentication_blueprint.index'))
 
 # Login & Registration
-
 @blueprint.route('/login', methods=['GET', 'POST'])
 def login():
     login_form = LoginForm(request.form)

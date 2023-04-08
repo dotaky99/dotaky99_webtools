@@ -1,6 +1,6 @@
 {% extends "layouts/base.html" %}
 
-{% block title %} Tables {% endblock %} 
+{% block title %} Base64 {% endblock %} 
 
 <!-- Specific Page CSS goes HERE  -->
 {% block stylesheets %}{% endblock stylesheets %}
@@ -13,11 +13,15 @@
         <div class="card my-4">
           <div class="card-header p-0 position-relative mt-n4 mx-3 z-index-2">
             <div class="bg-gradient-primary shadow-primary border-radius-lg pt-4 pb-3">
-              <h6 class="text-white text-capitalize ps-3">Authors table</h6>
+              <h6 class="text-white text-capitalize ps-3">Base64 Encode</h6>
             </div>
           </div>
           <div class="card-body px-0 pb-2">
             <div class="table-responsive p-0">
+              <div class="mb-2">
+                <textarea class="textarea" placeholder="Place some text here"
+                          style="width: 100%; height: 200px; font-size: 14px; line-height: 20px; border: 1px solid #dddddd; padding: 10px;"></textarea>
+              </div>
               <table class="table align-items-center mb-0">
                 <thead>
                   <tr>
